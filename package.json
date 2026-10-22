@@ -1,0 +1,9 @@
+{
+    "name": "chief",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "test": "node --test tests/*.test.mjs",
+        "test:integration": "node --test tests/room-lifetime.integration.mjs"
+    }
+}

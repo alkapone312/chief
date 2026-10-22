@@ -1,0 +1,52 @@
+<div class="editor-grid">
+    <div class="panel">
+        <p class="eyebrow">$t('editor.kicker')</p>
+        <h2 class="editor-title">$t('editor.yourMenu')</h2>
+
+        <div class="two">
+            {{roomField}}
+            {{menuField}}
+        </div>
+
+        <div id="editor-items">
+            {{items}}
+        </div>
+
+        <button type="button" class="btn ghost" data-editor-action="add-item">
+            $t('editor.addDish')
+        </button>
+
+        <div class="divider"></div>
+
+        <div class="actions">
+            <button type="button" class="btn dark" data-editor-action="save-menu">
+                $t('editor.save')
+            </button>
+            <button type="button" class="btn white" data-editor-action="export-menu">
+                $t('editor.export')
+            </button>
+            <button type="button" class="btn white" data-editor-action="import-menu">
+                $t('editor.import')
+            </button>
+        </div>
+
+        <input id="import-file" type="file" accept=".json,application/json" hidden>
+    </div>
+
+    <aside class="panel">
+        <p class="eyebrow">$t('editor.important')</p>
+        <h3>$t('editor.editing')</h3>
+        <p class="side-note">
+            $t('editor.deleteWarning')
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="side-note">
+            $t('editor.priceHint')
+        </p>
+        <p class="side-note">
+            $t('editor.nestingHint')
+        </p>
+    </aside>
+</div>

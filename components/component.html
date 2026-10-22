@@ -1,0 +1,19 @@
+<div class="component">
+    <div class="component-head">
+        <strong>{{typeName}}</strong>
+        <button type="button" class="button-link"
+            data-editor-action="remove-component" data-path="{{path}}">
+            $t('editor.remove')
+        </button>
+    </div>
+
+    <div class="field">
+        <label>$t('editor.componentType')</label>
+        <select data-editor-change="node-type" data-path="{{path}}">
+            {{typeOptions}}
+        </select>
+    </div>
+
+    {{labelField}}
+    {{body}}
+</div>

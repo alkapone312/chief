@@ -1,0 +1,40 @@
+<div class="editor-item">
+    <div class="editor-item-header">
+        <h3>🍽️ $t('editor.dish') {{number}}</h3>
+        <button type="button" class="btn danger small"
+            data-editor-action="remove-item" data-index="{{index}}">
+            $t('editor.remove')
+        </button>
+    </div>
+
+    <div class="fields editor-fields">
+        {{nameField}}
+
+        <div class="field">
+            <label>$t('editor.description')</label>
+            <textarea data-edit="item:{{index}}:description">{{description}}</textarea>
+        </div>
+
+        <div class="two">
+            {{priceField}}
+
+            <div class="field">
+                <label>$t('editor.availability')</label>
+                <select data-edit="item:{{index}}:available">
+                    <option value="yes" {{availableYes}}>$t('editor.available')</option>
+                    <option value="no" {{availableNo}}>$t('editor.unavailable')</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="components">
+        <p class="mini-label">$t('editor.components')</p>
+        {{components}}
+
+        <button type="button" class="btn small ghost"
+            data-editor-action="add-component" data-path="{{childrenPath}}">
+            $t('editor.addComponent')
+        </button>
+    </div>
+</div>

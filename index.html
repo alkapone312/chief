@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111b18">
+    <meta name="description" content="Chief: QR ordering for mobile kitchens.">
+    <title>Chief — Your kitchen, your rules</title>
+    <script>
+        // Apply the stored theme before the stylesheet to avoid a bright flash.
+        try {
+            document.documentElement.classList.toggle(
+                "dark",
+                localStorage.getItem("theme") === "dark"
+            );
+        } catch {
+            // Storage may be unavailable in private browsing.
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <header class="top">
+        <a class="brand" href="./" data-i18n-aria-label="app.home" aria-label="Chief home">
+            <span class="brand-icon">✳</span>chief<span class="brand-dot">.</span>
+        </a>
+        <span class="top-note" data-i18n="app.header.tagline">MOBILE KITCHENS, MADE SIMPLE.</span>
+        <div class="header-right">
+            <button
+                class="toggle-mode"
+                id="theme-toggle"
+                type="button"
+                aria-pressed="false"
+                aria-label="Switch to dark mode"
+            >
+                <span class="toggle-icon" aria-hidden="true"></span>
+                <span class="toggle-label">LIGHT</span>
+            </button>
+            <label class="language-control">
+                <span data-i18n="app.language">Interface language</span>
+                <select id="language-select" aria-label="Interface language">
+                    <option value="en_GB">English (UK)</option>
+                    <option value="pl_PL">Polski</option>
+                </select>
+            </label>
+            <span class="top-pill">
+                <span class="live-dot"></span><span data-i18n="app.header.ready">READY TO SERVE</span>
+            </span>
+        </div>
+    </header>
+
+    <main id="app">
+        <section class="loading" data-i18n="app.loading">Opening your kitchen…</section>
+    </main>
+
+    <footer>
+        CHIEF © 2026
+        <span data-i18n="app.footer.motto">MADE FOR PEOPLE WHO FEED PEOPLE.</span>
+    </footer>
+
+    <script src="qr.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
